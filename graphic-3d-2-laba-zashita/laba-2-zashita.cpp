@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <locale>
+#include <cmath>
 
 float coordinateIsInSphere(float x, float y, float z)
 {
@@ -14,12 +16,12 @@ int main()
 {
     using namespace std;
 
-    setlocale(0, "Russian");
-
     float x, y, z = 0;
     float Radius = 1;
 
-    cout << "Введите Ваши точки..." << endl;
+    setlocale(0, "");
+
+    cout << "Введите Ваши точки ..." << endl;
     cout << "X = ";
     cin >> x;
     cout << "Y = ";
