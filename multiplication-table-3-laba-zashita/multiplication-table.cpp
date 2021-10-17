@@ -5,15 +5,21 @@ int main()
 {
     using namespace std;
 
-    for (int i = 5; i < 14; i++)
+    // render column rows
+    for (int k = 0; k <= 1; k++)
     {
-        cout << i - (i - 2) << " x " << setw(2) << left << i - 3 << " = " << setw(2) << right << (i - (i - 2)) * (i - 3) << "\t\t" << i - (i - 3) << " x " << setw(2) << left << i - 3 << " = " << setw(2) << right << (i - (i - 3)) * (i - 3) << "\t\t" << i - (i - 4) << " x " << setw(2) << left << i - 3 << " = " << setw(2) << right << (i - (i - 4)) * (i - 3) << "\t\t" << i - (i - 5) << " x " << setw(2) << left << i - 3 << " = " << setw(2) << right << (i - (i - 5)) * (i - 3) << endl;
+        // multiplicator after "x";
+        for (int i = 2; i <= 10; i++)
+        {
+            // first multiplicator
+            for (int j = 1; j <= 4; j++)
+            {
+                //                 4 + (1*4) + 1    == 9
+                cout << setw(2) << j + k * 4 + 1 << " X " << setw(2) << i << " = " << setw(2) << (j + k * 4 + 1) * i << "\t\t";
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
-    cout << endl;
-    for (int i = 9; i < 18; i++)
-    {
-        cout << (i - (i - 6)) << " x " << setw(2) << left << (i - 7) << " = " << setw(2) << right << (i - (i - 6)) * (i - 7) << "\t\t" << (i - (i - 7)) << " x " << setw(2) << left << (i - 7) << " = " << setw(2) << right << (i - (i - 7)) * (i - 7) << "\t\t" << (i - (i - 8)) << " x " << setw(2) << left << (i - 7) << " = " << setw(2) << right << (i - (i - 8)) * (i - 7) << "\t\t" << (i - (i - 9)) << " x " << setw(2) << left << (i - 7) << " = " << setw(2) << right << (i - (i - 9)) * (i - 7) << endl;
-    }
-
     system("pause");
 }
