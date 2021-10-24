@@ -28,7 +28,8 @@ int main()
         {
             int randNumber = -3 + rand() % 6;
 
-            if (j == matrixSize - 1) lastColumn[i] = randNumber;
+            if (j == matrixSize - 1)
+                lastColumn[i] = randNumber;
 
             matrix[i][j] = randNumber;
         }
@@ -55,8 +56,7 @@ int main()
 
     cout << "__________________" << endl;
 
-
-    int* resultVector = new int[matrixSize];
+    int *resultVector = new int[matrixSize];
 
     // main manipulations
     for (int i = 0; i < matrixSize; i++)
@@ -64,7 +64,8 @@ int main()
         // each row
         int summ = 0;
 
-        cout << "initial row summ = " << summ << endl << endl;
+        cout << "initial row summ = " << summ << endl
+             << endl;
         for (int j = 0; j < matrixSize; j++)
         {
             // each elem
@@ -76,15 +77,22 @@ int main()
 
             cout << "elem = " << matrix[i][j] << " x " << lastColumn[j] << " = " << resultNumber << endl;
             summ = summ + resultNumber;
-            
-            cout << "summ after each elem = " << summ << endl << endl;
+
+            cout << "summ after each elem = " << summ << endl
+                 << endl;
         }
 
-        cout << endl << "summ after all row elem = " << summ << endl;
-        
+        cout << endl
+             << "summ after all row elem = " << summ << endl;
+
         resultVector[i] = summ;
 
         cout << "____" << endl;
+    }
+
+    for (int i = 0; i < matrixSize; i++)
+    {
+        delete[] matrix[i];
     }
 
     delete[] matrix;
@@ -96,6 +104,8 @@ int main()
     {
         cout << setw(2) << resultVector[k] << endl;
     }
+
+    delete[] resultVector;
 
     system("pause");
 }
